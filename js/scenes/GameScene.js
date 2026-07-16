@@ -42,7 +42,7 @@ class GameScene extends Phaser.Scene {
         this.player = built.player;
         this.walls = built.walls;
         this.guards = built.guards;
-        this.cameras = built.cameras;
+        this.securityCameras = built.cameras;
         this.lasers = built.lasers;
         this.doors = built.doors;
         this.keycards = built.keycards;
@@ -230,7 +230,7 @@ class GameScene extends Phaser.Scene {
         }
 
         // Update security cameras
-        this.cameras.forEach(c => c.update(dt, this.player));
+        this.securityCameras.forEach(c => c.update(dt, this.player));
 
         // Update laser hazards pulse and handle collisions
         this.lasers.forEach(l => {
@@ -265,7 +265,7 @@ class GameScene extends Phaser.Scene {
         }
 
         // Update HUD
-        const detected = this.guards.some(g => g.fsm.is('CHASE')) || this.cameras.some(c => c.alerted) || (this.boss && this.boss.fsm.is('CHASE'));
+        const detected = this.guards.some(g => g.fsm.is('CHASE')) || this.securityCameras.some(c => c.alerted) || (this.boss && this.boss.fsm.is('CHASE'));
         
         if (detected && this.stealthRun) {
             this.stealthRun = false;
@@ -542,7 +542,7 @@ class GameScene extends Phaser.Scene {
         this.hudSystem.destroy();
         
         this.guards.forEach(g => g.destroy());
-        this.cameras.forEach(c => c.destroy());
+        this.securityCameras.forEach(c => c.destroy());
         this.lasers.forEach(l => l.destroy());
         this.doors.forEach(d => d.destroy());
         this.keycards.forEach(k => k.destroy());
