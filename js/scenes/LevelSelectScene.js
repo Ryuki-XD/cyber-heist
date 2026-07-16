@@ -85,8 +85,8 @@ class LevelSelectScene extends Phaser.Scene {
                 }).setOrigin(0.5);
 
                 // High score info
-                let recordTxt = 'NO DATA';
-                let rankTxt = '-';
+                let recordTxt = 'AWAITING BREACH';
+                let rankTxt = 'NOT CLEARED';
                 if (highscore) {
                     recordTxt = `${highscore.time}s | ${highscore.score} PTS`;
                     rankTxt = `RANK [${highscore.rank}]`;
