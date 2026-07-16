@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cyber Heist — Stealth Infiltration Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Phaser 3 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <!-- Overlay to bypass browser Autoplay audio restrictions -->
+        <div id="audio-prompt" onclick="this.classList.add('hidden')">
+            <div class="prompt-title">CYBER HEIST</div>
+            <div class="prompt-subtitle">DECRYPTING SYSTEM GATEWAY...</div>
+            <button class="prompt-btn">INITIALIZE CONNECTION</button>
+        </div>
+    </div>
+
+    <!-- Core Utilities -->
+    <script src="js/utils/Constants.js"></script>
+    <script src="js/utils/MathUtils.js"></script>
+    <script src="js/utils/FSM.js"></script>
+
+    <!-- Game Systems -->
+    <script src="js/systems/SaveSystem.js"></script>
+    <script src="js/systems/AudioSystem.js"></script>
+    <script src="js/systems/LightingSystem.js"></script>
+    <script src="js/systems/ParticleSystem.js"></script>
+    <script src="js/systems/HUDSystem.js"></script>
+    <script src="js/systems/AchievementSystem.js"></script>
+
+    <!-- Entities & AI -->
+    <script src="js/entities/Player.js"></script>
+    <script src="js/entities/Guard.js"></script>
+    <script src="js/entities/Camera.js"></script>
+    <script src="js/entities/Boss.js"></script>
+
+    <!-- Interactive Game Objects -->
+    <script src="js/objects/GameObjects.js"></script>
+
+    <!-- Level Construction -->
+    <script src="js/levels/LevelData.js"></script>
+    <script src="js/levels/LevelBuilder.js"></script>
+
+    <!-- Phaser Scenes -->
+    <script src="js/scenes/BootScene.js"></script>
+    <script src="js/scenes/MenuScene.js"></script>
+    <script src="js/scenes/SettingsScene.js"></script>
+    <script src="js/scenes/LevelSelectScene.js"></script>
+    <script src="js/scenes/GameScene.js"></script>
+    <script src="js/scenes/HackingScene.js"></script>
+    <script src="js/scenes/PauseScene.js"></script>
+    <script src="js/scenes/GameOverScene.js"></script>
+    <script src="js/scenes/VictoryScene.js"></script>
+
+    <!-- Configuration & Initialization -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
